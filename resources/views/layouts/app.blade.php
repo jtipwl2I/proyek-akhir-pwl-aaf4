@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Blank Page &mdash; Stisla</title>
+  <title>Sistem Perbankan</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -246,13 +246,8 @@
             <a href="index.html">St</a>
           </div>
           <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
             <li class="nav-item dropdown">
               <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
-              </ul>
             </li>
           </ul>
         </aside>
@@ -261,16 +256,16 @@
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>Sistem Perbankan</h1>
-            
+            <h1>@yield('section-header')</h1>
           </div>
           <div class="section-body">
+            @yield('content')
           </div>
         </section>
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-         
+
         </div>
         
       </footer>
