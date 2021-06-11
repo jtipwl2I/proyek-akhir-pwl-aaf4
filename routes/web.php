@@ -26,7 +26,7 @@ Route::middleware(['auth.custom'])->group(function () {
     });
 });;
 
-Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::get('home', [HomeController::class, 'index'])->name('user.home');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 
