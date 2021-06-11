@@ -237,21 +237,10 @@
           </li>
         </ul>
       </nav>
-      <div class="main-sidebar">
-        <aside id="sidebar-wrapper">
-          <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
-          </div>
-          <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
-          </div>
-          <ul class="sidebar-menu">
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-            </li>
-          </ul>
-        </aside>
-      </div>
+      @if(Auth::user()->is_admin)
+      @include('layouts.sidebar-admin')
+      @else
+      @endif
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
