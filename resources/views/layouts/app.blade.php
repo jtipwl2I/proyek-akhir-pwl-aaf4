@@ -240,6 +240,7 @@
       @if(Auth::user()->is_admin)
       @include('layouts.sidebar-admin')
       @else
+      @include('layouts.sidebar-user')
       @endif
       <!-- Main Content -->
       <div class="main-content">

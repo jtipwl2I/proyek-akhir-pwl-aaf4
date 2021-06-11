@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\NasabahController as AdminNasabahController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,4 +37,5 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middlew
 Route::group(['prefix' => 'admin', 'middleware' => 'cek.admin'], function(){
 	Route::redirect('/','/admin/dashboard');
 	Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+	Route::get('/nasabah', [AdminNasabahController::class, 'index'])->name('admin.nasabah');
 });
