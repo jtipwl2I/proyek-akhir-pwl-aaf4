@@ -78,8 +78,13 @@
                     <div class="form-group col-6">
                       <label>Province</label>
                       <select class="form-control selectric" name="province">
-                        <option>West Java</option>
-                        <option>East Java</option>
+                        <option>Sumatera</option>
+                        <option>Jawa</option>
+                        <option>Bali</option>
+                        <option>Nusa Tenggara</option>
+                        <option>Sulawesi</option>
+                        <option>Kalimantan</option>
+                        <option>Papua</option>
                       </select>
                     </div>
                   </div>
