@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +27,12 @@ Route::middleware(['auth.custom'])->group(function () {
     });
 });;
 
-Route::get('home', [HomeController::class, 'index'])->name('user.home');
+Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 
+// Route khusus admin
+Route::group(['prefix' => 'admin', 'middleware' => 'cek.admin'], function(){
+	Route::redirect('/','/admin/dashboard');
+	Route::get('/dashboard', [AdminDashboardController::class, 'index']);
+});
