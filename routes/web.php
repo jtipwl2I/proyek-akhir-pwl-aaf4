@@ -34,5 +34,5 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 // Route khusus admin
 Route::group(['prefix' => 'admin', 'middleware' => 'cek.admin'], function(){
 	Route::redirect('/','/admin/dashboard');
-	Route::get('/dashboard', [AdminDashboardController::class, 'index']);
+	Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 });
