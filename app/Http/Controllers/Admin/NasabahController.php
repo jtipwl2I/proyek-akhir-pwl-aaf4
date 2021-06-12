@@ -45,4 +45,19 @@ class NasabahController extends Controller
     		return redirect()->back()->with(['failed'=> 'Data gagal di tambahkan, coba lagi beberapa saat']);
     	}
     }
+
+    public function delete(Request $request)
+    {
+    	foreach ($request->data as $key => $v) {
+    		$user = User::find($v);
+    		if ($user) {
+    			if (!$user->is_admin) {
+
+    				$user->delete();
+    			}
+    		}
+    	}
+
+    	return response()->json(['success' => 1], 200);
+    }
 }

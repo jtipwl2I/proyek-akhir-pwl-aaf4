@@ -32,7 +32,9 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="card-footer"></div>
+	<div class="card-footer">
+		<button id="delete" class="btn btn-danger">Hapus</button>
+	</div>
 </div>
 @endsection
 @section('js')
@@ -43,12 +45,39 @@
 
 			if ($('#checkall:checked').length) {
 
-				$('#myTable input[type="checkbox"]').attr('checked','checked');
+				$('#myTable input[name="delete[]"]').attr('checked','checked');
 			} else {
 
-				$('#myTable input[type="checkbox"]').removeAttr('checked');
+				$('#myTable input[name="delete[]"]').removeAttr('checked');
 			}
 
+		});
+
+		$('#delete').click(function(){
+
+			let data = [];
+			let checkbox = $('#myTable input[name="delete[]"]:checked');
+			checkbox.each(function(i, d){
+
+				data.push(d.value);
+			});
+
+			$('#delete').attr('disabled','disabled');
+			
+			$.ajax({
+				url:'{{ route("admin.nasabah.delete") }}',
+				type: 'post',
+				data: {
+					_token: '{{ csrf_token() }}',
+					data: data,
+				},
+				success: function(result){
+					
+					if (result.success) {
+						window.location.href = '';
+					}
+				}
+			})
 		});
 
 	});
