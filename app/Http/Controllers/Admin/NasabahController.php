@@ -18,4 +18,31 @@ class NasabahController extends Controller
     {
     	return view('admin.nasabah-tambah');
     }
+
+    public function store(Request $request)
+    {
+    	// $request->validate([
+    	// 	'first_name' => 'required|max:191',
+    	// 	'last_name' => 'required|max:191',
+    	// 	'email' => 'email|required|max:191',
+    	// 	'password' => 'required|confirmed',
+    	// 	'country' => 'required|max:191',
+    	// 	'province' => 'required|max:191',
+    	// 	'city' => 'required|max:191',
+    	// 	'postal_code' => 'required'
+    	// ]);
+
+    	$data = $request->all();
+    	$data['city'] = $request->city;
+    	$data['password'] = bcrypt($data['password']);
+    	$data['username'] = $request->first_name.' '.$request->last_name;
+
+    	$create = User::create($data);
+
+    	if ($create) {
+    		return redirect()->back()->with(['success' => 'Data berhasil di tambahkan']);
+    	} else {
+    		return redirect()->back()->with(['failed'=> 'Data gagal di tambahkan, coba lagi beberapa saat']);
+    	}
+    }
 }

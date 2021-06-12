@@ -3,21 +3,21 @@
 @section('content')
 <form class="card card-outline card-primary" method="post">
 	@csrf
-	@if(session('success'))
-	<div class="alert alert-success">{{ session('success') }}</div>
-	@endif
-	@if(session('failed'))
-	<div class="alert alert-danger">{{ session('failed') }}</div>
-	@endif
-	@if($errors->any())
-	<div class="alert alert-danger">
-		@foreach($errors->all() as $error)
-		<li>{{ $error }}</li>
-		@endforeach
-	</div>
-	@endif
 	<div class="card-header text-primary">Tambah Nasabah</div>
 	<div class="card-body">
+		@if(session('success'))
+		<div class="alert alert-success">{{ session('success') }}</div>
+		@endif
+		@if(session('failed'))
+		<div class="alert alert-danger">{{ session('failed') }}</div>
+		@endif
+		@if($errors->any())
+		<div class="alert alert-danger">
+			@foreach($errors->all() as $error)
+			<li>{{ $error }}</li>
+			@endforeach
+		</div>
+		@endif
 		<div class="row">
 			<div class="form-group col-6">
 				<label for="first_name">First Name</label>
