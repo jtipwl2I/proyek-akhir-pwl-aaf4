@@ -13,4 +13,9 @@ class NasabahController extends Controller
     	$users = User::all();
     	return view('admin.nasabah', compact(['users']));
     }
+
+    public function create()
+    {
+    	return view('admin.nasabah-tambah');
+    }
 }
