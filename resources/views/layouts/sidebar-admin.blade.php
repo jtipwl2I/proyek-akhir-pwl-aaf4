@@ -14,6 +14,9 @@
         <a href="{{ route('admin.nasabah') }}" class="nav-link has-dropdown"><i class="fas fa-users"></i><span>Kelola nasabah</span></a>
         <ul class="dropdown-menu">
           <li>
+            <a class="nav-link" href="{{ route('admin.nasabah') }}">Data nasabah</a>
+          </li>
+          <li>
             <a class="nav-link" href="{{ route('admin.nasabah.create') }}">Tambah nasabah</a>
           </li>
         </ul>
