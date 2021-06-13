@@ -115,7 +115,7 @@ class NasabahController extends Controller
         $update = $user->update($data);
 
         if ($update) {
-            return redirect()->back()->with(['success' => 'Berhasil mengupdate data']);
+            return redirect()->route('admin.nasabah')->with(['success' => 'Berhasil mengupdate data']);
         } else {
             return redirect()->back()->with(['failed' => 'Gagal mengupdate data, coba beberapa saat lagi']);
         }
