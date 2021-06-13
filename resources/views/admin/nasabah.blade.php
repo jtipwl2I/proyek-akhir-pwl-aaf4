@@ -29,7 +29,7 @@
 					<td>{{ $user->city }}</td>
 					<td>{{ $user->postal_code }}</td>
 					<td>
-						<a href="/nasabah/{{ $user->id }}/edit" class="btn btn-warning">Edit</a>
+						<a href="/admin/nasabah/{{ $user->id }}/edit" class="btn btn-warning">Edit</a>
 					</td>
 				</tr>
 				@endforeach

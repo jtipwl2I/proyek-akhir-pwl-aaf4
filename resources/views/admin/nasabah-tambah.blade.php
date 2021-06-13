@@ -21,17 +21,17 @@
 		<div class="row">
 			<div class="form-group col-6">
 				<label for="first_name">First Name</label>
-				<input id="first_name" type="text" class="form-control" name="first_name" autofocus>
+				<input id="first_name" type="text" class="form-control" name="first_name" autofocus value="{{ $data->first_name ?? '' }}">
 			</div>
 			<div class="form-group col-6">
 				<label for="last_name">Last Name</label>
-				<input id="last_name" type="text" class="form-control" name="last_name">
+				<input id="last_name" type="text" class="form-control" name="last_name" value="{{ $data->last_name ?? '' }}">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="email">Email</label>
-			<input id="email" type="email" class="form-control" name="email">
+			<input id="email" type="email" class="form-control" name="email" value="{{ $data->email ?? '' }}">
 			<div class="invalid-feedback">
 			</div>
 		</div>
@@ -58,30 +58,30 @@
 			<div class="form-group col-6">
 				<label>Country</label>
 				<select class="form-control selectric" name="country">
-					<option>Indonesia</option>
+					<option @if(isset($data)) @if($data->country == 'Indonesia') selected @endif @endif>Indonesia</option>
 				</select>
 			</div>
 			<div class="form-group col-6">
 				<label>Province</label>
 				<select class="form-control selectric" name="province">
-					<option>Sumatera</option>
-					<option>Jawa</option>
-					<option>Bali</option>
-					<option>Nusa Tenggara</option>
-					<option>Sulawesi</option>
-					<option>Kalimantan</option>
-					<option>Papua</option>
+					<option @if(isset($data)) @if($data->province == 'Sumatera') selected @endif @endif>Sumatera</option>
+					<option @if(isset($data)) @if($data->province == 'Jawa') selected @endif @endif>Jawa</option>
+					<option @if(isset($data)) @if($data->province == 'Bali') selected @endif @endif>Bali</option>
+					<option @if(isset($data)) @if($data->province == 'Nusa Tenggara') selected @endif @endif>Nusa Tenggara</option>
+					<option @if(isset($data)) @if($data->province == 'Sulawesi') selected @endif @endif>Sulawesi</option>
+					<option @if(isset($data)) @if($data->province == 'Kalimantan') selected @endif @endif>Kalimantan</option>
+					<option @if(isset($data)) @if($data->province == 'Papua') selected @endif @endif>Papua</option>
 				</select>
 			</div>
 		</div>
 		<div class="row">
 			<div class="form-group col-6">
 				<label>City</label>
-				<input type="text" class="form-control" name="city">
+				<input type="text" class="form-control" name="city" value="{{ $data->city ?? '' }}">
 			</div>
 			<div class="form-group col-6">
 				<label>Postal Code</label>
-				<input type="text" class="form-control" name="postal_code">
+				<input type="text" class="form-control" name="postal_code" value="{{ $data->postal_code ?? '' }}">
 			</div>
 		</div>
 	</div>
