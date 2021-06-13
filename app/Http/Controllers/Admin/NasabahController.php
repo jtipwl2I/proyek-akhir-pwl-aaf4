@@ -32,11 +32,17 @@ class NasabahController extends Controller
     	// 	'postal_code' => 'required'
     	// ]);
 
-    	$data = $request->all();
+		$file = $request->file('file');
+
+		$namafile = uniqid().'.'.$file->extension ();
+
+		$file->move('img/nasabah', $namafile);
+		$data = $request->all();
+		$data['gambar'] = $namafile;
     	$data['city'] = $request->city;
     	$data['password'] = bcrypt($data['password']);
     	$data['username'] = $request->first_name.' '.$request->last_name;
-
+		//return $data;
     	$create = User::create($data);
 
     	if ($create) {
@@ -44,6 +50,7 @@ class NasabahController extends Controller
     	} else {
     		return redirect()->back()->with(['failed'=> 'Data gagal di tambahkan, coba lagi beberapa saat']);
     	}
+		
     }
 
     public function delete(Request $request)
