@@ -9,6 +9,7 @@
 					<th>
 						<input type="checkbox" class="" id="checkall">
 					</th>
+					<th>Foto</th>
 					<th>Nama depan</th>
 					<th>Nama belakang</th>
 					<th>Email</th>
@@ -21,6 +22,8 @@
 				@foreach($users as $user)
 				<tr>
 					<td><input type="checkbox" name="delete[]" value="{{ $user->id }}"></td>
+					<td><img src="/img/nasabah/{{ $user->gambar }}"
+						style="width: 100px;"></td>
 					<td>{{ $user->first_name }}</td>
 					<td>{{ $user->last_name }}</td>
 					<td>{{ $user->email }}</td>
