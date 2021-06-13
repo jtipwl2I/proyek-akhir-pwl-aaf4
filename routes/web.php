@@ -40,6 +40,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'cek.admin'], function(){
 	Route::get('/nasabah', [AdminNasabahController::class, 'index'])->name('admin.nasabah');
 	Route::get('/nasabah/create', [AdminNasabahController::class, 'create'])->name('admin.nasabah.create');
 	Route::post('/nasabah/create', [AdminNasabahController::class, 'store'])->name('admin.nasabah.create');
+	Route::get('/nasabah/search', [AdminNasabahController::class, 'search'])->name('admin.nasabah.search');
 	Route::post('/nasabah/delete', [AdminNasabahController::class, 'delete'])->name('admin.nasabah.delete');
 	Route::get('/nasabah/{id}/edit', [AdminNasabahController::class, 'edit']);
 	Route::post('/nasabah/{id}/edit', [AdminNasabahController::class, 'update']);

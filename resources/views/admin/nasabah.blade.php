@@ -40,8 +40,12 @@
 		</div>
 	</div>
 	<div class="card-footer">
+		<button id="edit" class="btn btn-warning">Edit</button>
+		<button id="show" class="btn btn-info">Show</button>
 		<button id="delete" class="btn btn-danger">Hapus</button>
+		
 	</div>
+
 </div>
 
 <div class="card card-outline card-primary mt-3" id="userData" style="display: none;">
