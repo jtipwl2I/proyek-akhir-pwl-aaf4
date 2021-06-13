@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('section-header', 'Tambah nasabah');
 @section('content')
-<form class="card card-outline card-primary" method="post">
+<form class="card card-outline card-primary" method="post"
+enctype="multipart/form-data"
+>
 	@csrf
 	<div class="card-header text-primary">Tambah Nasabah</div>
 	<div class="card-body">
@@ -28,8 +30,7 @@
 				<input id="last_name" type="text" class="form-control" name="last_name">
 			</div>
 		</div>
-
-		<div class="form-group">
+			<div class="form-group">
 			<label for="email">Email</label>
 			<input id="email" type="email" class="form-control" name="email">
 			<div class="invalid-feedback">
@@ -50,7 +51,15 @@
 				<input id="password2" type="password" class="form-control" name="password-confirm">
 			</div>
 		</div>
-
+			<div class="form-group col-6">
+					
+					<div class="form-group">
+						<b>Upload Foto Profil</b><br/>
+						<input type="file" name="file">
+					</div> 					 
+				
+			</div>
+		</div>
 		<div class="form-divider">
 			Your Home
 		</div>
