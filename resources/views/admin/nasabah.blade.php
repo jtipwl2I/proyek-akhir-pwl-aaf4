@@ -15,6 +15,7 @@
 					<th>Provinsi</th>
 					<th>Kota</th>
 					<th>Postal code</th>
+					<th>Edit</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +28,9 @@
 					<td>{{ $user->province }}</td>
 					<td>{{ $user->city }}</td>
 					<td>{{ $user->postal_code }}</td>
+					<td>
+						<a href="/nasabah/{{ $user->id }}/edit" class="btn btn-warning">Edit</a>
+					</td>
 				</tr>
 				@endforeach
 			</tbody>
