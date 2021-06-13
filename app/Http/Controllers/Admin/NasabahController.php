@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 namespace App\Http\Controllers\Admin;
 
@@ -59,5 +59,11 @@ class NasabahController extends Controller
     	}
 
     	return response()->json(['success' => 1], 200);
+    }
+
+    public function edit($id)
+    {
+        $data = User::findOrFaild($id);
+        return view('admin.nasabah-tambah', compact(['data']));
     }
 }
