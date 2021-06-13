@@ -105,7 +105,11 @@ class NasabahController extends Controller
             $file = $request->file('file');
             $namafile = uniqid().'.'.$file->extension();
             $file->move('img/nasabah', $namafile);
+            $data['gambar'] = $namafile;
 
+        } else {
+
+            unset($data['gambar']);
         }
 
         $update = $user->update($data);
