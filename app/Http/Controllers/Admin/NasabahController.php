@@ -52,7 +52,12 @@ class NasabahController extends Controller
     	}
 		
     }
-
+	public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $users = User::where('username', 'like', "%" . $keyword . "%")->get();
+        return view('admin.nasabah', compact('users'));
+    }
     public function delete(Request $request)
     {
     	foreach ($request->data as $key => $v) {
