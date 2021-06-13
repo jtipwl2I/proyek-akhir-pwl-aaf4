@@ -36,7 +36,15 @@ enctype="multipart/form-data"
 			<div class="invalid-feedback">
 			</div>
 		</div>
-
+		@if(isset($data))
+		<div class="alert alert-warning">
+			Peringatan :
+			<ul>
+				<li>Jika anda tidak ingin merubah password, maka kosongkan kolom password</li>
+				<li>Jika anda tidak ingin merubah gambar, maka kosongkan kolom gambar</li>
+			</ul>
+		</div>
+		@endif
 		<div class="row">
 			<div class="form-group col-6">
 				<label for="password" class="d-block">Password</label>
