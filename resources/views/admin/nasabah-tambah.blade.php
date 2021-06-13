@@ -30,7 +30,7 @@ enctype="multipart/form-data"
 				<input id="last_name" type="text" class="form-control" name="last_name" value="{{ $data->last_name ?? '' }}">
 			</div>
 		</div>
-			<div class="form-group">
+		<div class="form-group">
 			<label for="email">Email</label>
 			<input id="email" type="email" class="form-control" name="email" value="{{ $data->email ?? '' }}">
 			<div class="invalid-feedback">
@@ -51,14 +51,13 @@ enctype="multipart/form-data"
 				<input id="password2" type="password" class="form-control" name="password-confirm">
 			</div>
 		</div>
-			<div class="form-group col-6">
-					
-					<div class="form-group">
-						<b>Upload Foto Profil</b><br/>
-						<input type="file" name="file">
-					</div> 					 
-				
-			</div>
+		<div class="form-group col-6">
+			
+			<div class="form-group">
+				<b>Upload Foto Profil</b><br/>
+				<input type="file" name="file">
+			</div> 					 
+			
 		</div>
 		<div class="form-divider">
 			Your Home
@@ -99,5 +98,6 @@ enctype="multipart/form-data"
 			<button class="btn btn-primary">Simpan</button>
 		</div>
 	</div>
+
 </form>
 @endsection
