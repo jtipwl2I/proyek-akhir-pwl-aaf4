@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Models\User;
 
 class NasabahController extends Controller
@@ -91,6 +92,18 @@ class NasabahController extends Controller
             $data['password'] = bcrypt($request->password);
         } else {
             unset($data['password']);
+        }
+
+        if ($request->file) {
+
+            // Delete file lama
+            File::delete('img/nasabah'. $user->gambar);
+
+            // Upload file baru
+            $file = $request->file('file');
+            $namafile = uniqid().'.'.$file->extension();
+            $file->move('img/nasabah', $namafile);
+
         }
 
         $update = User::findOrFail($id)->update($data);
