@@ -87,6 +87,7 @@ class NasabahController extends Controller
     public function update($id, Request $request)
     {
         $data = $request->all();
+        $user = User::findOrFail($id);
 
         if ($request->password) {
             $data['password'] = bcrypt($request->password);
@@ -106,7 +107,7 @@ class NasabahController extends Controller
 
         }
 
-        $update = User::findOrFail($id)->update($data);
+        $update = $user->update($data);
 
         if ($update) {
             return redirect()->back()->with(['success' => 'Berhasil mengupdate data']);
