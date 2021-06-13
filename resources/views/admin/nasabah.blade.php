@@ -160,7 +160,7 @@
 					data: data,
 				},
 				success: function(result){
-					
+					$('#delete').removeAttr('disabled');
 					if (result.success) {
 						window.location.href = '';
 					}

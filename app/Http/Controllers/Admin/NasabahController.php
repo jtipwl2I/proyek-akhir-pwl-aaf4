@@ -48,17 +48,21 @@ class NasabahController extends Controller
 
     public function delete(Request $request)
     {
-    	foreach ($request->data as $key => $v) {
-    		$user = User::find($v);
-    		if ($user) {
-    			if (!$user->is_admin) {
+        if ($request->data) {
+            
+        	foreach ($request->data as $key => $v) {
+        		$user = User::find($v);
+        		if ($user) {
+        			if (!$user->is_admin) {
 
-    				$user->delete();
-    			}
-    		}
-    	}
+        				$user->delete();
+        			}
+        		}
+        	}
+    	   return response()->json(['success' => 1], 200);
+        }
 
-    	return response()->json(['success' => 1], 200);
+        return response()->json(['success' => 0], 200);
     }
 
     public function edit($id)
