@@ -67,7 +67,8 @@ class NasabahController extends Controller
         		$user = User::find($v);
         		if ($user) {
         			if (!$user->is_admin) {
-
+                        // Delete file
+                        File::delete('img/nasabah/'. $user->gambar);
         				$user->delete();
         			}
         		}
@@ -98,7 +99,7 @@ class NasabahController extends Controller
         if ($request->file) {
 
             // Delete file lama
-            File::delete('img/nasabah'. $user->gambar);
+            File::delete('img/nasabah/'. $user->gambar);
 
             // Upload file baru
             $file = $request->file('file');
