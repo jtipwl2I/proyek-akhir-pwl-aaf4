@@ -66,4 +66,23 @@ class NasabahController extends Controller
         $data = User::findOrFail($id);
         return view('admin.nasabah-tambah', compact(['data']));
     }
+
+    public function update($id, Request $request)
+    {
+        $data = $request->all();
+
+        if ($request->password) {
+            $data['password'] = bcrypt($request->password);
+        } else {
+            unset($data['password']);
+        }
+
+        $update = User::findOrFail($id)->update($data);
+
+        if ($update) {
+            return redirect()->back()->with(['success' => 'Berhasil mengupdate data']);
+        } else {
+            return redirect()->back()->with(['failed' => 'Gagal mengupdate data, coba beberapa saat lagi']);
+        }
+    }
 }
