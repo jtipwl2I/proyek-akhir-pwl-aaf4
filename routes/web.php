@@ -40,7 +40,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'cek.admin'], function(){
 	Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
 	Route::get('/settings', [AdminSettingController::class, 'index'])->name('admin.settings');
-	Route::post('/settings', [AdminSettingController::class, 'store']);
+	Route::post('/settings', [AdminSettingController::class, 'update']);
 
 	Route::get('/nasabah', [AdminNasabahController::class, 'index'])->name('admin.nasabah');
 	Route::get('/nasabah/create', [AdminNasabahController::class, 'create'])->name('admin.nasabah.create');
