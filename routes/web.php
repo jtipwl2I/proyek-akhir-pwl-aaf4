@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\NasabahController as AdminNasabahController;
+use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 
 /*
 |--------------------------------------------------------------------------
