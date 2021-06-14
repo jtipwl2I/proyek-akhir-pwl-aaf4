@@ -37,6 +37,9 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middlew
 Route::group(['prefix' => 'admin', 'middleware' => 'cek.admin'], function(){
 	Route::redirect('/','/admin/dashboard');
 	Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+
+	Route::get('/settings', [AdminSettingController::class, 'index'])->name('admin.settings');
+
 	Route::get('/nasabah', [AdminNasabahController::class, 'index'])->name('admin.nasabah');
 	Route::get('/nasabah/create', [AdminNasabahController::class, 'create'])->name('admin.nasabah.create');
 	Route::post('/nasabah/create', [AdminNasabahController::class, 'store'])->name('admin.nasabah.create');
