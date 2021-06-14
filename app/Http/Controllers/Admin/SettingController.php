@@ -11,4 +11,9 @@ class SettingController extends Controller
     {
     	return view('admin.setting');
     }
+
+    public function store(Request $request)
+    {
+    	return $request;;
+    }
 }

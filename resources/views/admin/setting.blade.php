@@ -86,8 +86,8 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="file">Gambar</label>
-		<input id="file" type="file" class="form-control" name="file">
+		<label for="file">Gambar</label><br>
+		<input id="file" type="file" name="file">
 		<div class="invalid-feedback">
 		</div>
 	</div>
@@ -114,9 +114,11 @@
 </div>
 <div class="card-footer">
 	<div class="text-right">
-		<button class="btn btn-secondary" onclick="$('#userForm').hide(); $('#userData').show()" id="btnEdit">Batal</button>
+		<button class="btn btn-secondary" onclick="$('#userForm').hide(); $('#userData').show()" id="btnEdit">Simpan</button>
+		<button class="btn btn-primary">Batal</button>
 	</div>
 </div>
+@csrf
 </form>
 @endsection
 @section('js')
