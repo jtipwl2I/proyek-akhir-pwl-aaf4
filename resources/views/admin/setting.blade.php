@@ -4,7 +4,10 @@
 <div class="card card-outline card-primary mt-3" id="userData">
 	<div class="card-header text-primary">Data Admin</div>
 	<div class="card-body">
-		<div class="row">			<div class="form-group col-6">
+		<label>Gambar</label><br>
+		<img src="{{ asset('img/nasabah').'/'.Auth::user()->gambar }}" style="width: 200px;" class="mb-3">
+		<div class="row">		
+			<div class="form-group col-6">
 			<label for="first_name">First Name</label>
 			<input readonly id="first_name" type="text" class="form-control" name="first_name" value="{{ Auth::user()->first_name }}">
 		</div>
@@ -114,8 +117,8 @@
 </div>
 <div class="card-footer">
 	<div class="text-right">
-		<button class="btn btn-secondary" onclick="$('#userForm').hide(); $('#userData').show()" id="btnEdit">Simpan</button>
-		<button class="btn btn-primary">Batal</button>
+		<button class="btn btn-secondary" type="button" onclick="$('#userForm').hide(); $('#userData').show()" id="btnEdit">Batal</button>
+		<button class="btn btn-primary">Simnpan</button>
 	</div>
 </div>
 @csrf
