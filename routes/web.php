@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\NasabahController as AdminNasabahController;
 use App\Http\Controllers\Admin\SettingController as AdminSettingController;
+use App\Http\Controllers\SettingNasabahController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +30,12 @@ Route::middleware(['auth.custom'])->group(function () {
     Route::get('/test', function() {
         return 0;
     });
-});;
 
+});;
+// Route khusus nasabah
+Route::group(['prefix' => 'nasabah', 'middleware' => 'auth'], function(){
+Route::get('setting', [SettingNasabahController::class, 'index'])->name('setting');
+});
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
