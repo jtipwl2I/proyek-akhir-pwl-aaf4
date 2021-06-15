@@ -7,7 +7,7 @@
 			<div class="card-body">
 				<label class="text-warning">Saldo anda</label>
 				<div class="text-dark">
-					Rp <h4 class="d-inline">1000000</h4>
+					Rp <h4 class="d-inline">{{ number_format(Auth::user()->saldo) }}</h4>
 				</div>
 			</div>
 		</div>
