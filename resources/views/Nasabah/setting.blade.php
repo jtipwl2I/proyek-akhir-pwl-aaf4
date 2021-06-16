@@ -118,7 +118,7 @@
 <div class="card-footer">
 	<div class="text-right">
 		<button class="btn btn-secondary" type="button" onclick="$('#userForm').hide(); $('#userData').show()" id="btnEdit">Batal</button>
-		<button class="btn btn-primary">Simnpan</button>
+		<button class="btn btn-primary">Simpan</button>
 	</div>
 </div>
 @csrf
