@@ -10,6 +10,9 @@
       <li class="nav-item">
         <a href="{{ route('home') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('setting') }}" class="nav-link"><i class="fas fa-fire"></i><span>Identitas Nasabah</span></a>
+      </li>
     </ul>
   </aside>
 </div>
