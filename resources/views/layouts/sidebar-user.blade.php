@@ -11,7 +11,13 @@
         <a href="{{ route('home') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
       </li>
       <li class="nav-item">
-        <a href="{{ route('setting') }}" class="nav-link"><i class="fas fa-fire"></i><span>Identitas Nasabah</span></a>
+        <a href="{{ route('identitasNasabah') }}" class="nav-link"><i class="fas fa-fire"></i><span>Identitas Nasabah</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ route('tambahSaldo') }}" class="nav-link"><i class="fas fa-fire"></i><span>Tambah Saldo</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ route('transfer') }}" class="nav-link"><i class="fas fa-fire"></i><span>Transfer</span></a>
       </li>
     </ul>
   </aside>
