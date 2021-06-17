@@ -17,8 +17,12 @@ class TransferController extends Controller
     	$user = User::where('no_rek', $request->no_rek);
 
     	if (!$user->count()) {
-    		return "Nasabah tidak di temukan";
+    		return "Nasabah dengan no rekening ".$request->no_rek." tidak di temukan";
     	} else {
+
+    		if (Auth::user()->saldo < $request->jumlah) {
+    			return "Saldo anda tidak mencukupi";
+    		}
 
     		$userData = $user->first();
     		$saldoUser = Auth::user()->saldo;
