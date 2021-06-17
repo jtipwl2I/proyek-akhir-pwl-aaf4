@@ -40,6 +40,7 @@ Route::group(['prefix' => 'nasabah', 'middleware' => 'auth'], function(){
 	Route::get('identitasNasabah', [IdentitasNasabahController::class, 'index'])->name('identitasNasabah');
 	Route::prefix('saldo')->group(function(){
 		Route::get('topup', [TambahSaldoController::class, 'index'])->name('tambahSaldo');
+		Route::post('topup', [TambahSaldoController::class, 'store']);
 		Route::get('transfer', [transferController::class, 'index'])->name('transfer');
 		Route::get('riwayat', [TambahSaldoController::class, 'history'])->name('riwayatSaldo');
 	});

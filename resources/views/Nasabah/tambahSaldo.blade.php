@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
                 <label>Jumlah Top Up Rp</label>
-                <input type="text" class="form-control" name="postal_code" value="{{ $data->postal_code ?? '' }}">
+                <input type="text" class="form-control" name="saldo" value="{{ $data->postal_code ?? '' }}">
             </div>
 		</div>
 	<div class="card-footer">
