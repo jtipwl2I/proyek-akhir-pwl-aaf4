@@ -116,6 +116,7 @@ class AuthController extends Controller
         $user->city = $request->city;
         $user->postal_code = $request->postal_code;
         $user->email_verified_at = \Carbon\Carbon::now();
+        $user->no_rek = random_int(0, 9).random_int(0, 9).random_int(0, 9).random_int(0, 9).random_int(0, 9);
         $simpan = $user->save();
 
         if($simpan){

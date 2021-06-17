@@ -43,6 +43,7 @@ class NasabahController extends Controller
     	$data['city'] = $request->city;
     	$data['password'] = bcrypt($data['password']);
     	$data['username'] = $request->first_name.' '.$request->last_name;
+        $data['no_rek'] = random_int(0, 9).random_int(0, 9).random_int(0, 9).random_int(0, 9).random_int(0, 9);
 		//return $data;
     	$create = User::create($data);
 

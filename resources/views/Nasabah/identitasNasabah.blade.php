@@ -6,6 +6,10 @@
 	<div class="card-body">
 		<label>Gambar</label><br>
 		<img src="{{ asset('img/nasabah').'/'.Auth::user()->gambar }}" style="width: 200px;" class="mb-3">
+		<div class="form-group col-6">
+			<label for="no_rek">No Rekening</label>
+			<input readonly id="no_rek" type="text" class="form-control" name="no_rek" value="{{ Auth::user()->no_rek }}">
+		</div>
 		<div class="row">		
 			<div class="form-group col-6">
 			<label for="first_name">First Name</label>
