@@ -36,13 +36,16 @@ Route::middleware(['auth.custom'])->group(function () {
 });;
 // Route khusus nasabah
 Route::group(['prefix' => 'nasabah', 'middleware' => 'auth'], function(){
-Route::get('setting', [SettingNasabahController::class, 'index'])->name('setting');
-Route::get('identitasNasabah', [IdentitasNasabahController::class, 'index'])->name('identitasNasabah');
-Route::get('tambahSaldo', [TambahSaldoController::class, 'index'])->name('tambahSaldo');
-Route::get('transfer', [transferController::class, 'index'])->name('transfer');
+	Route::get('setting', [SettingNasabahController::class, 'index'])->name('setting');
+	Route::get('identitasNasabah', [IdentitasNasabahController::class, 'index'])->name('identitasNasabah');
+	Route::prefix('saldo')->group(function(){
+		Route::get('topup', [TambahSaldoController::class, 'index'])->name('tambahSaldo');
+		Route::get('transfer', [transferController::class, 'index'])->name('transfer');
+		Route::get('riwayat', [TambahSaldoController::class, 'history'])->name('riwayatSaldo');
+	});
+	Route::get('home', [HomeController::class, 'index'])->name('home');
+	Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 });
-Route::get('home', [HomeController::class, 'index'])->name('home');
-Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 
 // Route khusus admin
