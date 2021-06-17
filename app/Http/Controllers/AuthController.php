@@ -97,7 +97,15 @@ class AuthController extends Controller
         //     return redirect()->back()->withErrors($validator)->withInput($request->all);
         // }
 
+        $file = $request->file('file');
+
+        $namafile = uniqid().'.'.$file->extension ();
+
+        $file->move('img/nasabah', $namafile);
+        $data = $request->all();
+
         $user = new User;
+        $user->gambar = $namafile;
         $user->email = strtolower($request->email);
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;

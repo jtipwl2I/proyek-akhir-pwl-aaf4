@@ -31,7 +31,7 @@
               <div class="card-header"><h4>Register</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="{{ route('register.action') }}">
+                <form method="POST" action="{{ route('register.action') }}" enctype="multipart/form-data">
                   <div class="row">
                     <div class="form-group col-6">
                       <label for="first_name">First Name</label>
@@ -63,6 +63,11 @@
                       <label for="password2" class="d-block">Password Confirmation</label>
                       <input id="password2" type="password" class="form-control" name="password-confirm">
                     </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Gambar</label><br>
+                    <input type="file" name="file">
                   </div>
 
                   <div class="form-divider">
