@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('section-header', 'Setting')
+@section('section-header', 'Identitas Nasabah')
 @section('content')
 <div class="card card-outline card-primary mt-3" id="userData">
 	<div class="card-header text-primary">Data Nasabah</div>
