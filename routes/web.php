@@ -7,7 +7,9 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\NasabahController as AdminNasabahController;
 use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 use App\Http\Controllers\SettingNasabahController;
-
+use App\Http\Controllers\IdentitasNasabahController;
+use App\Http\Controllers\TambahSaldoController;
+use App\Http\Controllers\transferController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,9 @@ Route::middleware(['auth.custom'])->group(function () {
 // Route khusus nasabah
 Route::group(['prefix' => 'nasabah', 'middleware' => 'auth'], function(){
 Route::get('setting', [SettingNasabahController::class, 'index'])->name('setting');
+Route::get('identitasNasabah', [IdentitasNasabahController::class, 'index'])->name('identitasNasabah');
+Route::get('tambahSaldo', [TambahSaldoController::class, 'index'])->name('tambahSaldo');
+Route::get('transfer', [transferController::class, 'index'])->name('transfer');
 });
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
