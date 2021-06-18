@@ -20,6 +20,7 @@
 						<th>Gambar</th>
 						<th>Nama depan</th>
 						<th>Nama belakang</th>
+						<th>Nomor Rekening</th>
 						<th>Email</th>
 						<th>Provinsi</th>
 						<th>Kota</th>
@@ -34,6 +35,7 @@
 						<td><img src="/img/nasabah/{{ $user->gambar }}" style="width: 100px;"></td>
 						<td>{{ $user->first_name }}</td>
 						<td>{{ $user->last_name }}</td>
+						<td>{{ $user->no_rek }}</td>
 						<td>{{ $user->email }}</td>
 						<td>{{ $user->province }}</td>
 						<td>{{ $user->city }}</td>
@@ -67,7 +69,10 @@
 				<input readonly id="last_name" type="text" class="form-control" name="last_name">
 			</div>
 		</div>
-
+		<div class="form-group col-6">
+			<label for="no_rek">No Rekening</label>
+			<input readonly id="no_rek" type="text" class="form-control" name="no_rek" value="{{ Auth::user()->no_rek }}">
+		</div>
 		<div class="form-group">
 			<label for="email">Email</label>
 			<input readonly id="email" type="email" class="form-control" name="email">
