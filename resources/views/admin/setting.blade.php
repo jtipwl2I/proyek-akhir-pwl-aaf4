@@ -16,7 +16,7 @@
 			<input readonly id="last_name" type="text" class="form-control" name="last_name" value="{{ Auth::user()->last_name }}">
 		</div>
 	</div>
-
+	
 	<div class="form-group">
 		<label for="email">Email</label>
 		<input readonly id="email" type="email" class="form-control" name="email" value="{{ Auth::user()->email }}">
