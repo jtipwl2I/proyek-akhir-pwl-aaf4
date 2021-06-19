@@ -38,12 +38,14 @@ Route::middleware(['auth.custom'])->group(function () {
 Route::group(['prefix' => 'nasabah', 'middleware' => 'auth'], function(){
 	Route::get('setting', [SettingNasabahController::class, 'index'])->name('setting');
 	Route::get('identitasNasabah', [IdentitasNasabahController::class, 'index'])->name('identitasNasabah');
+
 	Route::prefix('saldo')->group(function(){
 		Route::get('topup', [TambahSaldoController::class, 'index'])->name('tambahSaldo');
 		Route::post('topup', [TambahSaldoController::class, 'store']);
 		Route::get('transfer', [transferController::class, 'index'])->name('transfer');
 		Route::post('transfer', [transferController::class, 'send']);
 		Route::get('riwayat', [TambahSaldoController::class, 'history'])->name('riwayatSaldo');
+		Route::get('cetak-pdf', [CetakController::class, 'index'])->name('pdf');
 	});
 	Route::get('home', [HomeController::class, 'index'])->name('home');
 	Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');

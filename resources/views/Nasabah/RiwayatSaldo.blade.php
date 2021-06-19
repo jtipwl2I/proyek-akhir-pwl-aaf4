@@ -12,6 +12,7 @@
           <th>Kepada</th>
           <th>Nominal</th>
           <th>Tanggal Transaksi</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -36,6 +37,9 @@
           <td>Rp{{ $d->jumlah_transfer }} <span class="badge badge-warning">Transfer</span></td>
           @endif
           <td>{{ $d->created_at }}</td>
+          <td>
+            <a href="{{ route('pdf') }}?id={{ $d->id }}" class="btn btn-warning">Cetak</a>
+          </td>
         </tr>
         @endforeach
       </tbody>
