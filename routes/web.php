@@ -10,6 +10,7 @@ use App\Http\Controllers\SettingNasabahController;
 use App\Http\Controllers\IdentitasNasabahController;
 use App\Http\Controllers\TambahSaldoController;
 use App\Http\Controllers\transferController;
+use App\Http\Controllers\CetakController;
 
 /*
 |--------------------------------------------------------------------------
