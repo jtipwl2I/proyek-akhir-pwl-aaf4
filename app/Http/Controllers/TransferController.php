@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Riwayat;
 use App\Models\User;
 use Auth;
 
@@ -34,11 +35,18 @@ class TransferController extends Controller
     			'saldo' => $totalTransfer
     		]);
 
-    		User::find(Auth::user()->id)->update([
-    			'saldo' => Auth::user()->saldo - $jumlah
-    		]);
+            Riwayat::create([
+                'from_id' => Auth::user()->id,
+                'target_id' => $user->first()->id,
+                'jumlah_transfer'=> $jumlah,
+                'is_topup' => 0
+            ]);
 
-    		return redirect()->route('home');
-    	}
+            User::find(Auth::user()->id)->update([
+             'saldo' => Auth::user()->saldo - $jumlah
+         ]);
+
+            return redirect()->route('home');
+        }
     }
 }

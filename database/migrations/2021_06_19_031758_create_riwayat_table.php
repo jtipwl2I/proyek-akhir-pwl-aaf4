@@ -19,7 +19,7 @@ class CreateRiwayatTable extends Migration
             $table->integer('jumlah_topUp')->nullable();
             $table->timestamps();
             $table->integer('target_id');
-            $table->integer('from_id');
+            $table->integer('from_id')->nullable();
             $table->boolean('is_topup')->default(0);
         });
     }

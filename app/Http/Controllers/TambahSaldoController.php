@@ -19,13 +19,21 @@ class TambahSaldoController extends Controller
     		$request->saldo = 0;
     	}
 
+        $target = User::find(Auth::user()->id);
     	$saldoAwal = Auth::user()->saldo;
     	$topupSaldo = $request->saldo;
     	$total = $saldoAwal + $topupSaldo;
 
-    	$topup = User::find(Auth::user()->id)->update([
+    	$topup = $target->update([
     		'saldo' => $total
     	]);
+
+        Riwayat::create([
+            'from_id' => null,
+            'target_id' => $target->id,
+            'jumlah_toUp'=> $topupSaldo,
+            'is_topup' => 1
+        ]);
 
     	if ($topup) {
     		return redirect()->route('home');
@@ -36,7 +44,7 @@ class TambahSaldoController extends Controller
 
     public function history()
     {
-        $riwayat = Riwayat::where('from_id', Auth::user()->id, 'target_id')->get();
+        $riwayat = Riwayat::where('from_id', Auth::user()->id)->orWhere('target_id', Auth::user()->id)->get();
 
         $data = [];
         foreach ($riwayat as $r) {
@@ -46,7 +54,6 @@ class TambahSaldoController extends Controller
             $r->from = $from;
             $data[] = $r;
         }
-
 
         return view('Nasabah.RiwayatSaldo', compact(['data']));
     }
