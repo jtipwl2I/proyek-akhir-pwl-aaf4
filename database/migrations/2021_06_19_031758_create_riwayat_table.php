@@ -14,11 +14,13 @@ class CreateRiwayatTable extends Migration
     public function up()
     {
         Schema::create('riwayat', function (Blueprint $table) {
-            $table->integer('jumlah_transfer');
-            $table->integer('jumlah_topUp');
+            $table->id();
+            $table->integer('jumlah_transfer')->nullable();
+            $table->integer('jumlah_topUp')->nullable();
             $table->timestamps();
             $table->integer('target_id');
             $table->integer('from_id');
+            $table->boolean('is_topup')->default(0);
         });
     }
 

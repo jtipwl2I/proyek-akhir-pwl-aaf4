@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Riwayat;
 use Auth;
 
 class TambahSaldoController extends Controller
@@ -31,5 +32,22 @@ class TambahSaldoController extends Controller
     	} else {
     		return redirect()->back();
     	}
+    }
+
+    public function history()
+    {
+        $riwayat = Riwayat::where('from_id', Auth::user()->id, 'target_id')->get();
+
+        $data = [];
+        foreach ($riwayat as $r) {
+            $from = User::where('id', $r->from_id)->first();
+            $target = User::where('id', $r->target_id)->first();
+            $r->target = $target;
+            $r->from = $from;
+            $data[] = $r;
+        }
+
+
+        return view('Nasabah.RiwayatSaldo', compact(['data']));
     }
 }

@@ -1,39 +1,41 @@
 @extends('layouts.app')
 @section('section-header', 'Identitas Nasabah')
 @section('content')
-<table class="table table-bordered" id="myTable">
-    <thead>
+<div class="card card-primary card-outline">
+  <div class="card-header">Riwayar</div>
+  <div class="card-body">     
+    <table class="table table-bordered" id="myTable">
+      <thead>
         <tr>
-            <th>
-                <input type="checkbox" class="" id="checkall">
-            </th>
-            <th>Gambar</th>
-            <th>Nama depan</th>
-            <th>Nama belakang</th>
-            <th>Tanggal Transaksi</th>
-            <th>Nomor Rekening</th>
-            <th>Jumlah Transfer</th>
-            <th>Jumlah Top Up</th>
-            <th>Edit</th>
+          <th>Gambar</th>
+          <th>Dari</th>
+          <th>Kepada</th>
+          <th>Nominal</th>
+          <th>Tanggal Transaksi</th>
         </tr>
-    </thead>
-    <tbody>
-        @foreach($users as $user)
+      </thead>
+      <tbody>
+        @foreach($data as $d)
         <tr>
-            <td><input type="checkbox" name="delete[]" value="{{ $user->id }}"></td>
-            <td><img src="/img/nasabah/{{ $user->gambar }}" style="width: 100px;"></td>
-            <td>{{ $user->first_name }}</td>
-            <td>{{ $user->last_name }}</td>
-            <td>{{ $user->created_at }}</td>
-            <td>{{ $user->no_rek}}</td>
-            <td>{{ $user->jumlah_transfer }}</td>
-            <td>{{ $user->jumlah_topUp }}</td>
-            <td>
-                <a href="/admin/nasabah/{{ $user->id }}/edit" class="btn btn-warning">Edit</a>
-                <a class="btn btn-info" onclick="showData({{ $user->id }})">Lihat</a>
-            </td>
+          <td><img src="/img/nasabah/{{ $d->from->gambar }}" style="width: 100px;"></td>
+          <td>
+            Nama : {{ $d->from->username }}<br>
+            No Rek : {{ $d->from->no_rek }}
+          </td>
+          <td>
+            Nama : {{ $d->target->username }}<br>
+            No Rek : {{ $d->target->no_rek }}
+          </td>
+          @if($d->is_topup)
+          <td>Rp{{ $d->jumlah_topup }} <span class="badge badge-success">Menerima</span></td>
+          @else
+          <td>Rp{{ $d->jumlah_transfer }} <span class="badge badge-warning">Mengirim</span></td>
+          @endif
+          <td>{{ $d->created_at }}</td>
         </tr>
         @endforeach
-    </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>
 @endsection
