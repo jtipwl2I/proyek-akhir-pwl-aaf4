@@ -31,7 +31,7 @@ class TambahSaldoController extends Controller
         Riwayat::create([
             'from_id' => null,
             'target_id' => $target->id,
-            'jumlah_toUp'=> $topupSaldo,
+            'jumlah_topUp'=> $topupSaldo,
             'is_topup' => 1
         ]);
 
