@@ -9,13 +9,13 @@
 <body class="bg-light">
 	<div class="container">
 		<div class="card shadow border-0">
-			<div class="card-header">Struk</div>
+			<div class="text-center">STRUK </div>
 			<div class="card-body">
 				<div class="border rounded p-3">
 					@if($data->is_topup)
-					<span class="bg-light px-3 py-2 border rounded">Topup</span>
+					<span class="bg-light px-3 py-2 border rounded">TOP UP</span>
 					@else
-					<span class="bg-light px-3 py-2 border rounded">Transfer</span>
+					<span class="bg-light px-3 py-2 border rounded">TRANSFER</span>
 					@endif
 					<div class="row">
 						<div class="col-lg-8"></div>
@@ -23,16 +23,16 @@
 							<b>Data pengirim :</b> <br>
 							@if($data->from)
 							Nama : {{ $data->from->first_name }} {{ $data->from->last_name }} <br>
-							Nama : {{ $data->from->no_rek }} <br>
-							Foto : <br> <img src="/img/nasabah/{{ $data->from->gambar }}" style="width: 100px;"> <br>
+							Nomor Rekening : {{ $data->from->no_rek }} <br>
+							Foto : <br> <img src="{{ asset('img/nasabah/' . $data->from->gambar) }}"style="width: 100px;"> <br>
 							@else
 							-
 							@endif
 							<br><br>
 							<b>Data penerima :</b> <br>
 							Nama : {{ $data->target->first_name }} {{ $data->target->last_name }} <br>
-							Nama : {{ $data->target->no_rek }} <br>
-							Foto : <br> <img src="/img/nasabah/{{ $data->target->gambar }}" style="width: 100px;"> <br>
+							Nomor Rekenin : {{ $data->target->no_rek }} <br>
+							Foto : <br> <img src="{{ asset('img/nasabah/' . $data->target->gambar) }}" style="width: 100px;"> <br>
 						</div>
 					</div>
 					<br><br>
