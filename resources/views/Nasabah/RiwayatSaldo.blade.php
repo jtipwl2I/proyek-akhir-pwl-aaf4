@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('section-header', 'Identitas Nasabah')
+@section('section-header', 'Riwayat')
 @section('content')
 <div class="card card-primary card-outline">
-  <div class="card-header">Riwayar</div>
+  <div class="card-header">Riwayat</div>
   <div class="card-body">     
     <table class="table table-bordered" id="myTable">
       <thead>
