@@ -3,13 +3,23 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style type="text/css">
-		
-	</style>
+				div.a {
+			text-align: center;
+		}
+		</style>
+		<div class="a">
+		<h1>STRUK TRANSFER DAN TOP UP!</h1>
+		<p>BANK ANDINI ANDI FAJRIN</p>
+		</div>
+
+		<div class="a">
+		<h2>SIMPAN STRUK</h2>
+		<p>SEBAGAI TANDA BUKTI TRANSAKSI</p>
+		</div>
 </head>
 <body class="bg-light">
 	<div class="container">
 		<div class="card shadow border-0">
-			<div class="text-center">STRUK </div>
 			<div class="card-body">
 				<div class="border rounded p-3">
 					@if($data->is_topup)
@@ -24,19 +34,21 @@
 							@if($data->from)
 							Nama : {{ $data->from->first_name }} {{ $data->from->last_name }} <br>
 							Nomor Rekening : {{ $data->from->no_rek }} <br>
-							Foto : <br> <img src="{{ asset('img/nasabah/' . $data->from->gambar) }}"style="width: 100px;"> <br>
+							Foto : <br> <img src="{{ $data->from->gambar }}"style="width: 100px;"> <br>
 							@else
 							-
 							@endif
 							<br><br>
 							<b>Data penerima :</b> <br>
 							Nama : {{ $data->target->first_name }} {{ $data->target->last_name }} <br>
-							Nomor Rekenin : {{ $data->target->no_rek }} <br>
-							Foto : <br> <img src="{{ asset('img/nasabah/' . $data->target->gambar) }}" style="width: 100px;"> <br>
+							Nomor Rekening : {{ $data->target->no_rek }} <br>
+							Foto : <br> <img src="{{ $data->target->gambar }}" style="width: 100px;"> <br>
 						</div>
 					</div>
 					<br><br>
-					<b>Data Transaksi :</b>
+					<div class="a">
+						<h2>DATA TRANSAKSI</h2>
+					</div>
 					<table class="table table-bordered" id="myTable">
 						<thead>
 							<tr>
