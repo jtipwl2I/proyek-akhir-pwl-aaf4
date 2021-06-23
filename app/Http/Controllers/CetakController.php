@@ -17,6 +17,16 @@ class CetakController extends Controller
 		$target = User::where('id', $data->target_id)->first();
 		$data->target = $target;
 		$data->from = $from;
+
+		// ubah format gambar jadi base64
+		$path = 'img/nasabah/' . $data->target->gambar;
+		$type = pathinfo($path, PATHINFO_EXTENSION);
+		$gambar = file_get_contents($path);
+		$data->target->gambar = 'data:image/'.$type.';base64,'.base64_encode($gambar);
+		$path = 'img/nasabah/' . $data->from->gambar;
+		$type = pathinfo($path, PATHINFO_EXTENSION);
+		$gambar = file_get_contents($path);
+		$data->from->gambar = 'data:image/'.$type.';base64,'.base64_encode($gambar);
 		//dd($data);
 	
 		// return $data;
