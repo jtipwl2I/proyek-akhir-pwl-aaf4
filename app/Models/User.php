@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $guarded = [
-        'password',
+        // 'password',
     ];
 
     /**
@@ -38,4 +38,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function getNasabah()
+    {
+        return $this->where(['is_admin' => 0])->get();
+    }
 }
