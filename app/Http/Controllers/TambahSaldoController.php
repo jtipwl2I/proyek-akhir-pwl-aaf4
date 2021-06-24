@@ -53,6 +53,7 @@ class TambahSaldoController extends Controller
             $r->target = $target;
             $r->from = $from;
             $data[] = $r;
+           // dd($data);
         }
 
         return view('Nasabah.RiwayatSaldo', compact(['data']));
