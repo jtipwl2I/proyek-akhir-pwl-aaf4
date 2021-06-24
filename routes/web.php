@@ -36,8 +36,10 @@ Route::middleware(['auth.custom'])->group(function () {
 
 });;
 // Route khusus nasabah
+
 Route::group(['prefix' => 'nasabah', 'middleware' => 'auth'], function(){
 	Route::get('setting', [SettingNasabahController::class, 'index'])->name('setting');
+	Route::post('setting', [SettingNasabahController::class, 'update'])->name('setting.post');
 	Route::get('identitasNasabah', [IdentitasNasabahController::class, 'index'])->name('identitasNasabah');
 
 	Route::prefix('saldo')->group(function(){

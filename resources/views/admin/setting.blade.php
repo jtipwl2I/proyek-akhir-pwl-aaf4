@@ -70,6 +70,15 @@
 		<div class="invalid-feedback">
 		</div>
 	</div>
+	
+		<div class="alert alert-warning">
+			Peringatan :
+			<ul>
+				<li>Jika anda tidak ingin merubah password, maka kosongkan kolom password</li>
+				<li>Jika anda tidak ingin merubah gambar, maka kosongkan kolom gambar</li>
+			</ul>
+		</div>
+		
 	<div class="row">
 		<div class="col-6">
 			<div class="form-group">
@@ -90,7 +99,7 @@
 	</div>
 	<div class="form-group">
 		<label for="file">Gambar</label><br>
-		<input id="file" type="file" name="file">
+		<input id="file" type="file" name="gambar">
 		<div class="invalid-feedback">
 		</div>
 	</div>
@@ -118,7 +127,7 @@
 <div class="card-footer">
 	<div class="text-right">
 		<button class="btn btn-secondary" type="button" onclick="$('#userForm').hide(); $('#userData').show()" id="btnEdit">Batal</button>
-		<button class="btn btn-primary">Simnpan</button>
+		<button class="btn btn-primary">Simpan</button>
 	</div>
 </div>
 @csrf

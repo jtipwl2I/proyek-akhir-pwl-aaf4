@@ -51,10 +51,12 @@
 </div>
 </div>
 
-<form class="card card-outline card-primary mt-3" id="userForm" enctype="multipart/form-data" method="post" style="display: none;">
+<form class="card card-outline card-primary mt-3" id="userForm" enctype="multipart/form-data" method="post" style="display: none;"  action="{{route('setting.post')}}">
+	@csrf
 	<div class="card-header text-primary">Ubah Data Admin</div>
 	<div class="card-body">
-		<div class="row">			<div class="form-group col-6">
+		<div class="row">			
+			<div class="form-group col-6">
 			<label for="first_name">First Name</label>
 			<input id="first_name" type="text" class="form-control" name="first_name" value="{{ Auth::user()->first_name }}">
 		</div>
@@ -90,7 +92,7 @@
 	</div>
 	<div class="form-group">
 		<label for="file">Gambar</label><br>
-		<input id="file" type="file" name="file">
+		<input id="file" type="file" name="gambar">
 		<div class="invalid-feedback">
 		</div>
 	</div>

@@ -18,18 +18,18 @@
       <tbody>
         @foreach($data as $d)
         <tr>
-          <td><img src="/img/nasabah/{{ $d->target->gambar }}" style="width: 100px;"></td>
+          <td><img src="/img/nasabah/{{ $d->target->gambar }}" style="width: 100px;"></td> 
           <td>
             @if($d->from)
-            Nama : {{ $d->from->username }}<br>
+            Nama : {{ $d->from->username }}<br> 
             No Rek : {{ $d->from->no_rek }}
             @else
             -
             @endif
           </td>
           <td>
-            Nama : {{ $d->target->username }}<br>
-            No Rek : {{ $d->target->no_rek }}
+            Nama : {{ $d->target->username }}<br> 
+            No Rek : {{ $d->target->no_rek }} 
           </td>
           @if($d->is_topup)
           <td>Rp{{ $d->jumlah_topUp }} <span class="badge badge-success">Topup</span></td>
