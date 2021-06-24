@@ -36,15 +36,6 @@ enctype="multipart/form-data"
 			<div class="invalid-feedback">
 			</div>
 		</div>
-		@if(isset($data))
-		<div class="alert alert-warning">
-			Peringatan :
-			<ul>
-				<li>Jika anda tidak ingin merubah password, maka kosongkan kolom password</li>
-				<li>Jika anda tidak ingin merubah gambar, maka kosongkan kolom gambar</li>
-			</ul>
-		</div>
-		@endif
 		<div class="row">
 			<div class="form-group col-6">
 				<label for="password" class="d-block">Password</label>
@@ -56,14 +47,14 @@ enctype="multipart/form-data"
 			</div>
 			<div class="form-group col-6">
 				<label for="password2" class="d-block">Password Confirmation</label>
-				<input id="password2" type="password" class="form-control" name="password-confirm">
+				<input id="password2" type="password" class="form-control" name="password_confirmation">
 			</div>
 		</div>
 		<div class="form-group col-6">
 			
 			<div class="form-group">
 				<b>Upload Foto Profil</b><br/>
-				<input type="file" name="file">
+				<input type="file" name="gambar">
 			</div> 					 
 			
 		</div>
