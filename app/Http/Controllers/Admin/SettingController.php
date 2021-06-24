@@ -18,7 +18,8 @@ class SettingController extends Controller
     public function update(Request $request)
     {
     	$id = Auth::user()->id;
-    	$data = $request->all();
+    	$data = $request->except('password_confirmation');
+       // dd($data);
         $user = User::findOrFail($id);
 
         if ($request->password) {
@@ -27,13 +28,13 @@ class SettingController extends Controller
             unset($data['password']);
         }
 
-        if ($request->file) {
+        if ($request->gambar) {
 
             // Delete file lama
             File::delete('img/nasabah/'. $user->gambar);
 
             // Upload file baru
-            $file = $request->file('file');
+            $file = $request->file('gambar');
             $namafile = uniqid().'.'.$file->extension();
             $file->move('img/nasabah', $namafile);
             $data['gambar'] = $namafile;
@@ -44,6 +45,7 @@ class SettingController extends Controller
         }
 
         $update = $user->update($data);
+
 
         if ($update) {
             return redirect()->back()->with(['success' => 'Berhasil mengupdate data']);
