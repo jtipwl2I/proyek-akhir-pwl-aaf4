@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('section-header', 'Riwayat')
 @section('content')
+<style>
+  body{
+    background-color:rgb(59, 167, 209) ;
+  }
+  </style>
 <div class="card card-primary card-outline">
   <div class="card-header">Riwayat</div>
   <div class="card-body">     
