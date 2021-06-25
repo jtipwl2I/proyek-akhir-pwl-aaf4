@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('section-header', 'Tambah Saldo Top Up');
 @section('content')
+<style>
+    body{
+		background-color:rgb(59, 167, 209) ;
+    }
+    </style>
 <form class="card card-outline card-primary" method="post" enctype="multipart/form-data">
 	@csrf
 	<div class="card-header text-primary">Tambah Saldo</div>
