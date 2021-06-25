@@ -15,6 +15,11 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/components.css">
+  <style>
+    body{
+    background-color:rgb(19, 192, 183) ;
+    }
+    </style>
 </head>
 
 <body>
