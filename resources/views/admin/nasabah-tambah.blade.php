@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('section-header', 'Tambah nasabah');
 @section('content')
+<style>
+	body{
+	background-color:rgb(19, 123, 192) ;
+	}
+	</style>
 <form class="card card-outline card-primary" method="post"
 enctype="multipart/form-data"
 >
