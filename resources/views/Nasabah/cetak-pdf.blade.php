@@ -16,6 +16,11 @@
 		<h2>SIMPAN STRUK</h2>
 		<p>SEBAGAI TANDA BUKTI TRANSAKSI</p>
 		</div>
+		<style>
+			body{
+			background-color:orange ;
+			}
+			</style>
 </head>
 <body class="bg-light">
 	<div class="container">
