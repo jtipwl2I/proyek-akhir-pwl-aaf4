@@ -94,7 +94,7 @@ class NasabahController extends Controller
         
         $data = $request->except('password_confirmation');
         $user = User::findOrFail($id);
-        dd($data);
+
         if ($request->password) {
             $data['password'] = bcrypt($request->password);
         } else {
