@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('section-header', 'Identitas Nasabah')
 @section('content')
+<style>
+    body{
+    background-color:rgb(19, 192, 183) ;
+    }
+    </style>
 <div class="card card-outline card-primary mt-3" id="userData">
 	<div class="card-header text-primary">Data Nasabah</div>
 	<div class="card-body">
