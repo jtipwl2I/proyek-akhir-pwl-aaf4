@@ -9,6 +9,11 @@
 				<input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan keyword">
 				<button type="submit" class="btn btn-primary mb-1">Cari</button>
 			</div>
+			<style>
+				body{
+				background-color:rgb(19, 123, 192) ;
+				}
+				</style>
 		</form>
 		<div style="overflow-x: auto;">
 			<table class="table table-bordered" id="myTable">
